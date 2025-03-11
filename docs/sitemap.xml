@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourdomain.com/index.html</loc>
+    <lastmod>2025-03-11T02:54:40.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/articles.html</loc>
+    <lastmod>2025-03-11T03:21:18.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/articles/article-template/index.html</loc>
+    <lastmod>2025-03-11T03:31:49.831Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/articles/adaptive-design/index.html</loc>
+    <lastmod>2025-03-11T03:31:51.070Z</lastmod>
+  </url>
+</urlset>

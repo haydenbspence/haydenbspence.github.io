@@ -3,7 +3,7 @@ title: "Articles"
 listing:
   contents: articles
   sort: "date desc"
-  #type: default
-  type: grid
+  type: default
+
 page-layout: full
 ---

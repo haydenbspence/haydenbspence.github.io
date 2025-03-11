@@ -53,7 +53,7 @@
     "href": "articles.html",
     "title": "Articles",
     "section": "",
-    "text": "Quarto Tufte Style\n\n\n\n\n\n\nHayden Spence\n\n\nMar 10, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Adaptive Designs: Flexibility in Research Methodology\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2025\n\n\nHayden Spence\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Tufte Style\n\n\n\n\n\n\n\n\n\n\n\nMar 10, 2025\n\n\nHayden Spence\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "articles/article-template/index.html",
@@ -67,7 +67,7 @@
     "href": "index.html",
     "title": "Hello",
     "section": "",
-    "text": "Background\nI write"
+    "text": "Welcome"
   },
   {
     "objectID": "articles/article-template/index.html#typography-test",
@@ -110,5 +110,75 @@
     "title": "Quarto Tufte Style",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is a sidenote.↩︎"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html",
+    "href": "articles/adaptive-design/index.html",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Adaptive designs represent a significant evolution in research methodology, offering investigators the ability to modify studies based on interim results while maintaining statistical rigor. This approach stands in contrast to traditional fixed designs where all parameters must be predetermined.\n\n\nAdaptive design is characterized by planned modifications to trial procedures and statistical methods based on accumulated data. These modifications might include:\n\nSample size re-estimation: Adjusting participant numbers based on observed effect sizes\nTreatment allocation changes: Modifying randomization ratios to favor promising treatments\nSeamless phase transitions: Combining traditionally separate trial phases into a single study\nFutility stopping rules: Early termination criteria for ineffective interventions\n\n# Example of sample size re-calculation in R\ninitial_n &lt;- 100\nobserved_effect &lt;- 0.4  # From interim analysis\nrevised_n &lt;- power.t.test(d = observed_effect, \n                         sig.level = 0.05, \n                         power = 0.9)$n\nprint(paste(\"Revised sample size:\", ceiling(revised_n)))\n\n\n\nThe concept of adaptive designs emerged in the 1990s but gained significant traction in the 2010s.1 The FDA’s 2019 guidance document on adaptive designs marked a pivotal moment for their mainstream acceptance.\n\n“Adaptive designs can reduce resource utilization, decrease time to study completion, limit patient exposure to inferior treatments, and improve the probability of success.”\n— FDA Guidance for Industry, 2019\n\n\n\n\n\n\n\nUses accumulating outcome data to modify treatment allocation\nIncreases probability of participants receiving more effective treatments\nRaises ethical questions about equipoise\n\n\n\n\n\nEfficiently identifies optimal dosing\nReduces exposure to suboptimal or toxic doses\nCommonly employs Bayesian methods\n\n\n\n\n\nThe flexibility of adaptive designs introduces statistical complexities that must be carefully managed:\n\n\n\n\n\n\n\n\nChallenge\nConventional Approach\nAdaptive Solution\n\n\n\n\nType I Error Control\nFixed sample size\nAlpha spending functions\n\n\nEstimation Bias\nStandard estimators\nBias-adjusted estimators\n\n\nComplex Decision Rules\nNot applicable\nSimulation-based validation\n\n\n\n\n\n\nAdaptive designs have demonstrated particular value in:\n\n\nThe I-SPY 2 trial for breast cancer treatment used response-adaptive randomization and seamless phase II/III design to efficiently identify promising therapies for specific patient subgroups.\n\n\n\nLimited patient populations make adaptive designs especially valuable for rare diseases. The sample size reassessment capabilities allow researchers to optimize limited participant resources.\n\n\n\n\nDespite their advantages, adaptive designs face several practical hurdles:\n\nOperational complexity requiring sophisticated trial infrastructure\nRegulatory uncertainties despite improving guidance\nComputational demands for simulations and interim analyses\n\n# Python example of simulating type I error in an adaptive design\nimport numpy as np\n\ndef simulate_adaptive_trial(n_simulations=10000):\n    type_1_errors = 0\n    \n    for i in range(n_simulations):\n        # Generate data under null hypothesis\n        initial_data = np.random.normal(0, 1, 50)\n        \n        # First interim analysis\n        if np.mean(initial_data) / (np.std(initial_data)/np.sqrt(50)) &gt; 1.5:\n            # Decision to continue with more patients\n            additional_data = np.random.normal(0, 1, 50)\n            combined_data = np.concatenate([initial_data, additional_data])\n            \n            # Final analysis with adjusted threshold\n            if np.mean(combined_data) / (np.std(combined_data)/np.sqrt(100)) &gt; 1.96:\n                type_1_errors += 1\n    \n    return type_1_errors / n_simulations\n\ntype_1_error_rate = simulate_adaptive_trial()\nprint(f\"Empirical Type I error rate: {type_1_error_rate}\")\n\n\n\nAs computational capabilities improve and regulatory frameworks mature, we can expect adaptive designs to become increasingly prevalent. Emerging applications include:\n\nMaster protocols testing multiple treatments simultaneously\nPlatform trials allowing treatments to enter or exit over time\nAdaptive enrichment designs focusing resources on responsive subpopulations\n\n\n\n\nAdaptive designs offer a compelling middle ground between rigid traditional approaches and the need for flexibility in an increasingly complex research landscape. When implemented with appropriate statistical safeguards, they represent not merely a methodological innovation but a philosophical shift toward more efficient, ethical, and responsive research.\n\nLearn More About Adaptive Methods"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#the-fundamentals-of-adaptive-design",
+    "href": "articles/adaptive-design/index.html#the-fundamentals-of-adaptive-design",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Adaptive design is characterized by planned modifications to trial procedures and statistical methods based on accumulated data. These modifications might include:\n\nSample size re-estimation: Adjusting participant numbers based on observed effect sizes\nTreatment allocation changes: Modifying randomization ratios to favor promising treatments\nSeamless phase transitions: Combining traditionally separate trial phases into a single study\nFutility stopping rules: Early termination criteria for ineffective interventions\n\n# Example of sample size re-calculation in R\ninitial_n &lt;- 100\nobserved_effect &lt;- 0.4  # From interim analysis\nrevised_n &lt;- power.t.test(d = observed_effect, \n                         sig.level = 0.05, \n                         power = 0.9)$n\nprint(paste(\"Revised sample size:\", ceiling(revised_n)))"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#historical-context-and-evolution",
+    "href": "articles/adaptive-design/index.html#historical-context-and-evolution",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "The concept of adaptive designs emerged in the 1990s but gained significant traction in the 2010s.1 The FDA’s 2019 guidance document on adaptive designs marked a pivotal moment for their mainstream acceptance.\n\n“Adaptive designs can reduce resource utilization, decrease time to study completion, limit patient exposure to inferior treatments, and improve the probability of success.”\n— FDA Guidance for Industry, 2019"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#types-of-adaptive-designs",
+    "href": "articles/adaptive-design/index.html#types-of-adaptive-designs",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Uses accumulating outcome data to modify treatment allocation\nIncreases probability of participants receiving more effective treatments\nRaises ethical questions about equipoise\n\n\n\n\n\nEfficiently identifies optimal dosing\nReduces exposure to suboptimal or toxic doses\nCommonly employs Bayesian methods"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#statistical-considerations",
+    "href": "articles/adaptive-design/index.html#statistical-considerations",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "The flexibility of adaptive designs introduces statistical complexities that must be carefully managed:\n\n\n\n\n\n\n\n\nChallenge\nConventional Approach\nAdaptive Solution\n\n\n\n\nType I Error Control\nFixed sample size\nAlpha spending functions\n\n\nEstimation Bias\nStandard estimators\nBias-adjusted estimators\n\n\nComplex Decision Rules\nNot applicable\nSimulation-based validation"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#real-world-applications",
+    "href": "articles/adaptive-design/index.html#real-world-applications",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Adaptive designs have demonstrated particular value in:\n\n\nThe I-SPY 2 trial for breast cancer treatment used response-adaptive randomization and seamless phase II/III design to efficiently identify promising therapies for specific patient subgroups.\n\n\n\nLimited patient populations make adaptive designs especially valuable for rare diseases. The sample size reassessment capabilities allow researchers to optimize limited participant resources."
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#implementation-challenges",
+    "href": "articles/adaptive-design/index.html#implementation-challenges",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Despite their advantages, adaptive designs face several practical hurdles:\n\nOperational complexity requiring sophisticated trial infrastructure\nRegulatory uncertainties despite improving guidance\nComputational demands for simulations and interim analyses\n\n# Python example of simulating type I error in an adaptive design\nimport numpy as np\n\ndef simulate_adaptive_trial(n_simulations=10000):\n    type_1_errors = 0\n    \n    for i in range(n_simulations):\n        # Generate data under null hypothesis\n        initial_data = np.random.normal(0, 1, 50)\n        \n        # First interim analysis\n        if np.mean(initial_data) / (np.std(initial_data)/np.sqrt(50)) &gt; 1.5:\n            # Decision to continue with more patients\n            additional_data = np.random.normal(0, 1, 50)\n            combined_data = np.concatenate([initial_data, additional_data])\n            \n            # Final analysis with adjusted threshold\n            if np.mean(combined_data) / (np.std(combined_data)/np.sqrt(100)) &gt; 1.96:\n                type_1_errors += 1\n    \n    return type_1_errors / n_simulations\n\ntype_1_error_rate = simulate_adaptive_trial()\nprint(f\"Empirical Type I error rate: {type_1_error_rate}\")"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#the-future-of-adaptive-designs",
+    "href": "articles/adaptive-design/index.html#the-future-of-adaptive-designs",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "As computational capabilities improve and regulatory frameworks mature, we can expect adaptive designs to become increasingly prevalent. Emerging applications include:\n\nMaster protocols testing multiple treatments simultaneously\nPlatform trials allowing treatments to enter or exit over time\nAdaptive enrichment designs focusing resources on responsive subpopulations"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#conclusion",
+    "href": "articles/adaptive-design/index.html#conclusion",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "",
+    "text": "Adaptive designs offer a compelling middle ground between rigid traditional approaches and the need for flexibility in an increasingly complex research landscape. When implemented with appropriate statistical safeguards, they represent not merely a methodological innovation but a philosophical shift toward more efficient, ethical, and responsive research.\n\nLearn More About Adaptive Methods"
+  },
+  {
+    "objectID": "articles/adaptive-design/index.html#footnotes",
+    "href": "articles/adaptive-design/index.html#footnotes",
+    "title": "Adaptive Designs: Flexibility in Research Methodology",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe first major paper on adaptive designs in clinical trials was published by Donald Berry in 1993, though similar concepts had been discussed in sequential analysis literature since the 1960s.↩︎"
   }
 ]

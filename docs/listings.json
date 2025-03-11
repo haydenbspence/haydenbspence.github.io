@@ -2,6 +2,7 @@
   {
     "listing": "/articles.html",
     "items": [
+      "/articles/adaptive-design/index.html",
       "/articles/article-template/index.html"
     ]
   }

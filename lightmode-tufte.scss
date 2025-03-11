@@ -10,11 +10,27 @@ $link-color: #375a7f !default;  // Deep blue, matches Tufte aesthetic
 $link-hover-color: darken($link-color, 10%) !default;  
 
 // Adjusted Code Block Styling
-$pre-bg: #f5f5f5 !default;  // Soft gray background for code
+$pre-bg: #f8f8f8 !default;  // Slightly warmer gray background for code
 $pre-color: #111 !default;   // Slightly softer than full black
+$code-bg: rgba(0, 0, 0, 0.05) !default; // Subtle background for inline code
+$code-color: darken($link-color, 10%) !default; // Darker than links
 
 // Tables
 $table-border-color: #ddd !default;  // Subtle border color for a softer look
+$table-bg: rgba(0, 0, 0, 0.02) !default; // Very subtle background for tables
+$table-striped-bg: rgba(0, 0, 0, 0.04) !default; // Slightly darker for striped tables
 
 // Blockquotes
 $blockquote-color: #555 !default;  // Makes blockquotes distinct but non-intrusive
+$blockquote-border-color: #ccc !default; // Subtle border
+
+// Buttons
+$btn-primary-bg: $link-color !default;
+$btn-primary-color: white !default;
+
+// Focus styles
+$input-focus-border-color: lighten($link-color, 25%) !default;
+
+// Ensure adequate contrast for accessibility
+$navbar-dark-color: darken(white, 5%) !default;
+$navbar-dark-hover-color: white !default;
