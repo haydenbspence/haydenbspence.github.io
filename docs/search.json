@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "This is a test page to ensure our Tufte-inspired light and dark themes are working correctly.\n\n\nHere’s how the typography renders in different elements:\n\nBold Text: This is bold text.\nItalicized Text: This is italicized text.\nInline Code: Here’s inline code using JetBrains Mono.\n\n# Code block example (R)\nx &lt;- c(1, 2, 3)\nmean(x)\n# Code block example (Python)\nnumbers = [1, 2, 3]\naverage = sum(numbers) / len(numbers)\nprint(average)\n\n\n\n\n“Good design is as little design as possible.”\n— Dieter Rams\n\nThis is a sidenote example. Here’s a sentence with a sidenote.1\n\n\n\n\n\n\nFirst item\nSecond item\nThird item\n\n\n\n\n\nBullet point one\nBullet point two\nBullet point three\n\n\n\n\n\nHere’s how tables render:\n\n\n\nFeature\nLight Mode\nDark Mode\n\n\n\n\nBackground Color\nOff-white\nDark gray\n\n\nText Color\nBlack\nOff-white\n\n\nLinks\nBlue\nLighter blue\n\n\n\n\n\n\nThis is a test image with a caption:\n\nClick Me"
+  },
+  {
+    "objectID": "test.html#typography-test",
+    "href": "test.html#typography-test",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "Here’s how the typography renders in different elements:\n\nBold Text: This is bold text.\nItalicized Text: This is italicized text.\nInline Code: Here’s inline code using JetBrains Mono.\n\n# Code block example (R)\nx &lt;- c(1, 2, 3)\nmean(x)\n# Code block example (Python)\nnumbers = [1, 2, 3]\naverage = sum(numbers) / len(numbers)\nprint(average)"
+  },
+  {
+    "objectID": "test.html#blockquotes-and-sidenotes",
+    "href": "test.html#blockquotes-and-sidenotes",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "“Good design is as little design as possible.”\n— Dieter Rams\n\nThis is a sidenote example. Here’s a sentence with a sidenote.1"
+  },
+  {
+    "objectID": "test.html#lists",
+    "href": "test.html#lists",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "First item\nSecond item\nThird item\n\n\n\n\n\nBullet point one\nBullet point two\nBullet point three"
+  },
+  {
+    "objectID": "test.html#table-test",
+    "href": "test.html#table-test",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "Here’s how tables render:\n\n\n\nFeature\nLight Mode\nDark Mode\n\n\n\n\nBackground Color\nOff-white\nDark gray\n\n\nText Color\nBlack\nOff-white\n\n\nLinks\nBlue\nLighter blue"
+  },
+  {
+    "objectID": "test.html#figures-captions",
+    "href": "test.html#figures-captions",
+    "title": "Welcome to My Personal Site",
+    "section": "",
+    "text": "This is a test image with a caption:\n\nClick Me"
+  },
+  {
+    "objectID": "test.html#footnotes",
+    "href": "test.html#footnotes",
+    "title": "Welcome to My Personal Site",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a sidenote.↩︎"
+  },
+  {
+    "objectID": "articles.html",
+    "href": "articles.html",
+    "title": "Articles",
+    "section": "",
+    "text": "Quarto Tufte Style\n\n\n\n\n\n\nHayden Spence\n\n\nMar 10, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "articles/article-template/index.html",
+    "href": "articles/article-template/index.html",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "This is a test page to ensure our Tufte-inspired light and dark themes are working correctly.\n\n\nHere’s how the typography renders in different elements:\n\nBold Text: This is bold text.\nItalicized Text: This is italicized text.\nInline Code: Here’s inline code using JetBrains Mono.\n\n# Code block example (R)\nx &lt;- c(1, 2, 3)\nmean(x)\n# Code block example (Python)\nnumbers = [1, 2, 3]\naverage = sum(numbers) / len(numbers)\nprint(average)\n\n\n\n\n“Good design is as little design as possible.”\n— Dieter Rams\n\nThis is a sidenote example. Here’s a sentence with a sidenote.1\n\n\n\n\n\n\nFirst item\nSecond item\nThird item\n\n\n\n\n\nBullet point one\nBullet point two\nBullet point three\n\n\n\n\n\nHere’s how tables render:\n\n\n\nFeature\nLight Mode\nDark Mode\n\n\n\n\nBackground Color\nOff-white\nDark gray\n\n\nText Color\nBlack\nOff-white\n\n\nLinks\nBlue\nLighter blue\n\n\n\n\n\n\nThis is a test image with a caption:\n\nClick Me"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hello",
+    "section": "",
+    "text": "Background\nI write"
+  },
+  {
+    "objectID": "articles/article-template/index.html#typography-test",
+    "href": "articles/article-template/index.html#typography-test",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "Here’s how the typography renders in different elements:\n\nBold Text: This is bold text.\nItalicized Text: This is italicized text.\nInline Code: Here’s inline code using JetBrains Mono.\n\n# Code block example (R)\nx &lt;- c(1, 2, 3)\nmean(x)\n# Code block example (Python)\nnumbers = [1, 2, 3]\naverage = sum(numbers) / len(numbers)\nprint(average)"
+  },
+  {
+    "objectID": "articles/article-template/index.html#blockquotes-and-sidenotes",
+    "href": "articles/article-template/index.html#blockquotes-and-sidenotes",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "“Good design is as little design as possible.”\n— Dieter Rams\n\nThis is a sidenote example. Here’s a sentence with a sidenote.1"
+  },
+  {
+    "objectID": "articles/article-template/index.html#lists",
+    "href": "articles/article-template/index.html#lists",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "First item\nSecond item\nThird item\n\n\n\n\n\nBullet point one\nBullet point two\nBullet point three"
+  },
+  {
+    "objectID": "articles/article-template/index.html#table-test",
+    "href": "articles/article-template/index.html#table-test",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "Here’s how tables render:\n\n\n\nFeature\nLight Mode\nDark Mode\n\n\n\n\nBackground Color\nOff-white\nDark gray\n\n\nText Color\nBlack\nOff-white\n\n\nLinks\nBlue\nLighter blue"
+  },
+  {
+    "objectID": "articles/article-template/index.html#figures-captions",
+    "href": "articles/article-template/index.html#figures-captions",
+    "title": "Quarto Tufte Style",
+    "section": "",
+    "text": "This is a test image with a caption:\n\nClick Me"
+  },
+  {
+    "objectID": "articles/article-template/index.html#footnotes",
+    "href": "articles/article-template/index.html#footnotes",
+    "title": "Quarto Tufte Style",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a sidenote.↩︎"
+  }
+]

@@ -1,0 +1,73 @@
+---
+title: "Quarto Tufte Style"
+author: "Hayden Spence"
+date: "2025-03-10"
+categories:
+    - style
+    - typography
+    - tufte
+---
+
+
+# Welcome to My Personal Site
+
+This is a **test page** to ensure our Tufte-inspired light and dark themes are working correctly.  
+
+## Typography Test
+
+Here’s how the **typography** renders in different elements:
+
+- **Bold Text:** This is **bold** text.
+- *Italicized Text:* This is *italicized* text.
+- `Inline Code:` Here’s `inline code` using JetBrains Mono.
+
+```r
+# Code block example (R)
+x <- c(1, 2, 3)
+mean(x)
+```
+
+```python
+# Code block example (Python)
+numbers = [1, 2, 3]
+average = sum(numbers) / len(numbers)
+print(average)
+```
+
+## Blockquotes and Sidenotes
+
+> "Good design is as little design as possible."  
+> — *Dieter Rams*
+
+This is a **sidenote example**. Here’s a sentence with a sidenote.[^1]
+
+[^1]: This is a sidenote.
+
+## Lists
+
+### Ordered List
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+- Bullet point one
+- Bullet point two
+- Bullet point three
+
+## Table Test
+
+Here’s how tables render:
+
+| Feature  | Light Mode | Dark Mode |
+|----------|-----------|-----------|
+| Background Color | Off-white | Dark gray |
+| Text Color | Black | Off-white |
+| Links | Blue | Lighter blue |
+
+## Figures & Captions
+
+This is a **test image** with a caption:
+
+
+<button class="btn">Click Me</button>
