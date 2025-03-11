@@ -3,12 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "Spence"
+  title: "Hayden Spence"
+  favicon: "images/favicon.png"  # You'll need to create this favicon
+  site-url: https://yourdomain.com
+  description: "Personal website and blog of Hayden Spence"
   navbar:
+    background: dark
     right:
       - href: articles.qmd
         text: Articles
+      - icon: github
+        href: https://github.com/haydenbspence
 
+  page-footer:
+    left: "© 2025 Hayden Spence. All Rights Reserved."
+    right: "Legal Disclaimer"
 
 format:
   html:
@@ -16,5 +25,14 @@ format:
       light: ["lightmode-tufte.scss"]
       dark: ["darkmode-tufte.scss"]
     css: styles.css
-    include-after-body: footer.html
-
+    highlight-style: github
+    code-copy: true
+    code-link: true
+    toc: true
+    toc-title: ""
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+    smooth-scroll: true
+    anchor-sections: true

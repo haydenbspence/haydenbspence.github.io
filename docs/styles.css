@@ -2,6 +2,7 @@
 
 /* Import ET Book styles */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 @font-face {
     font-family: "et-book";
@@ -39,24 +40,10 @@
     font-display: swap;
 }
 
-/* === Fine-Tuned Fix for Title Cut-Off === */
-main, .article-content, .quarto-title-block {
-    padding-top: calc(59px + 1rem) !important; /* Dynamically adjust spacing */
-}
-
-/* For smaller screens, adjust padding so it isn't too large */
-@media (max-width: 768px) {
-    main, .article-content, .quarto-title-block {
-        padding-top: calc(60px + 0.5rem) !important; /* Slightly smaller padding */
-    }
-}
-
-
-
 /* === General Layout === */
 
 html {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 body {
@@ -65,8 +52,10 @@ body {
     margin-right: auto;
     padding-left: 5%;
     padding-right: 5%;
-    font-family: et-book, Palatino, "Palatino Linotype", Georgia, serif;
+    font-family: "et-book", "EB Garamond", Palatino, "Palatino Linotype", Georgia, serif;
     max-width: 1200px;
+    /* Clear previous padding-top values - will be set below */
+    padding-top: 0;
 }
 
 /* === Typography === */
@@ -112,6 +101,9 @@ p {
 /* Blockquotes */
 blockquote {
     font-size: 1.4rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid #aaa;
+    margin-left: 0.5rem;
 }
 
 /* === Navbar Styling (Consistent in Light & Dark Mode) === */
@@ -121,8 +113,14 @@ blockquote {
     padding: 0.8rem 1.5rem;
     border-bottom: 1px solid #444;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 50px; /* Set a fixed height for calculations */
 }
 
 .navbar a {
@@ -130,6 +128,7 @@ blockquote {
     text-decoration: none;
     padding: 0.5rem 1rem;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .navbar a:hover {
@@ -143,18 +142,70 @@ blockquote {
     border-bottom: 2px solid #5597d6;
 }
 
-/* Make Navbar Fixed on Top */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+/* === Main Content Adjustment for Fixed Navbar === */
+.quarto-title-banner,
+.quarto-title,
+.quarto-title-block {
+    margin-top: 70px !important; /* Space for navbar */
 }
 
-/* Add space for content so it doesn’t hide under the fixed navbar */
-body {
-    padding-top: 70px;
+/* Table of Contents positioning */
+.sidebar-menu-container,
+#TOC, 
+.toc-actions {
+    top: 60px !important; /* Position below navbar */
+    max-height: calc(100vh - 70px) !important; /* Viewport minus navbar */
+}
+
+/* Table of Contents styling */
+#toc-title {
+    font-size: 1.2rem;  /* Adjust the TOC title size */
+  }
+  
+  .sidebar nav[role="doc-toc"] ul {
+    font-size: 0.9rem;  /* Adjust the TOC items size */
+  }
+  
+  /* Optional: Different sizes for different levels */
+  .sidebar nav[role="doc-toc"] > ul > li > a {
+    font-size: 0.95rem;  /* First level items */
+  }
+  
+  .sidebar nav[role="doc-toc"] > ul > li > ul > li > a {
+    font-size: 0.85rem;  /* Second level items */
+  }
+
+/* Style ToC in left margin */
+.sidebar-left {
+    position: fixed;
+    left: 1rem;
+    max-width: 15rem;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Ensure ToC doesn't overlap content on narrow screens */
+  @media (max-width: 1200px) {
+    .sidebar-left {
+      position: static;
+      max-width: 100%;
+    }
+  }
+
+/* Article containers need space */
+.quarto-container-body {
+    margin-top: 70px;
+}
+
+/* Adjust first heading if no title block */
+.quarto-body > h1:first-child {
+    margin-top: 80px !important;
+}
+
+/* Listings need space too */
+.quarto-listing-container,
+.listing-container {
+    margin-top: 70px !important;
 }
 
 /* === Sidenotes and Margin Notes === */
@@ -168,34 +219,63 @@ body {
     line-height: 1.4;
     position: relative;
     opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
 
 .sidenote:hover, .marginnote:hover {
     opacity: 1;
 }
 
+/* Mobile sidenote toggle system */
+.margin-toggle {
+    display: none;
+}
+
+.sidenote-number {
+    counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after, .sidenote:before {
+    content: counter(sidenote-counter);
+    font-size: 0.9rem;
+    position: relative;
+    top: -0.3rem;
+    color: inherit;
+}
+
 /* === Figures and Captions === */
 
 figure {
     max-width: 55%;
+    margin: 1.5rem 0;
 }
 
 figcaption {
     float: right;
     clear: right;
     font-size: 1.1rem;
+    margin-top: 0.5rem;
+    max-width: 40%;
+    font-style: italic;
 }
 
 /* === Tables === */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
 }
 
 th, td {
     padding: 0.75rem;
     border: 1px solid;
+    text-align: left;
+}
+
+th {
+    font-weight: normal;
+    font-style: italic;
 }
 
 /* === Code Blocks === */
@@ -207,12 +287,25 @@ code, pre > code {
     background-color: transparent; /* Remove hardcoded background */
 }
 
-pre > code {
+pre {
+    padding: 0.5rem;
+    border-left: 3px solid #aaa;
+    margin: 1.5rem 0;
     width: 55%;
-    padding: 10px;
-    border-radius: 5px;
-    display: block;
     overflow-x: auto;
+}
+
+pre > code {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+}
+
+/* Inline code */
+p code, li code {
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
 }
 
 /* === Forms and Inputs === */
@@ -220,18 +313,26 @@ input, textarea {
     border: 1px solid;
     padding: 0.5rem;
     font-size: 1rem;
+    font-family: inherit;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 55%;
 }
 
 /* === Buttons === */
 .btn {
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
 
 .btn:hover {
     opacity: 0.8;
+    transform: translateY(-1px);
 }
 
 /* === Responsive Adjustments === */
@@ -240,6 +341,10 @@ input, textarea {
         width: 90%;
         padding-left: 5%;
         padding-right: 5%;
+    }
+    
+    pre > code, figure {
+        width: 75%;
     }
 }
 
@@ -250,52 +355,248 @@ input, textarea {
         padding-right: 3%;
     }
     
+    html {
+        font-size: 13px;
+    }
+    
+    /* Adjust mobile spacing */
+    .quarto-title-banner,
+    .quarto-title-block,
+    .quarto-container-body,
+    .quarto-listing-container,
+    .listing-container {
+        margin-top: 60px !important;
+    }
+    
+    /* Table of Contents mobile adjustment */
+    .sidebar-menu-container,
+    #TOC, 
+    .toc-actions,
+    .sidebar-menu {
+        top: 50px !important;
+    }
+    
+    /* Mobile sidenote toggle implementation */
+    .margin-toggle {
+        display: inline;
+        cursor: pointer;
+    }
+    
     .sidenote, .marginnote {
         display: none;
     }
-
+    
     .margin-toggle:checked + .sidenote,
     .margin-toggle:checked + .marginnote {
         display: block;
         float: left;
         width: 90%;
-        margin: 1rem 2.5%;
+        margin: 1rem 0;
+        padding: 0.5rem;
+        border-left: 3px solid #aaa;
+        background-color: rgba(200, 200, 200, 0.1);
+    }
+    
+    pre > code, figure {
+        width: 100%;
     }
 }
 
-/* === Footer Styling === */
-.page-footer {
-    text-align: center;  /* Center all footer content */
-    font-size: 10px !important;  /* Force small text */
-    width: 100vw;  /* Full width */
-    max-width: 100%;  /* Ensure it extends across the entire viewport */
-    margin: 1rem 0 0 0; /* Reduce top margin */
-    padding: 0.3rem 5%; /* Less padding for a more compact look */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle top border */
-    opacity: 0.6; /* Faded effect */
-    position: relative; /* Ensure it doesn’t interfere with other elements */
-    line-height: 1; /* Reduce line spacing */
+/* Style Quarto's built-in footer - smaller version */
+.quarto-footer,
+.quarto-footer p,
+.quarto-footer a,
+.quarto-footer span,
+.quarto-footer div,
+footer.quarto-footer *,
+.quarto-footer .footer-items-container {
+    font-size: 10px !important;
 }
 
-/* Reduce space between footer paragraphs */
-.page-footer p {
-    font-size: 10px !important;  /* Force smaller text */
-    margin: 0px !important;  /* Remove all extra space */
-    padding: 0 !important;  /* Remove extra padding */
-    display: block; /* Ensure block-level behavior */
-}
-
-/* Footer links styling */
-.page-footer a {
-    color: inherit;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 10px !important; /* Ensure links also have smaller text */
-    font-weight: 500;
+footer.quarto-footer {
     opacity: 0.8;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+    margin-top: 3rem;
+    padding: 0.5rem 0;
+    line-height: 1.2;
 }
 
-.page-footer a:hover {
-    text-decoration: underline;
-    opacity: 1;
+footer.quarto-footer p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* Article grid styling */
+.quarto-grid-item {
+    transition: transform 0.2s ease;
+}
+
+.quarto-grid-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Print styles for better PDF output */
+@media print {
+    body {
+        width: 100%;
+        padding: 0;
+        font-size: 11pt;
+    }
+    
+    .navbar, .quarto-footer {
+        display: none;
+    }
+    
+    .sidenote, .marginnote {
+        float: none;
+        display: block;
+        margin: 1rem 0;
+        width: 100%;
+        font-size: 10pt;
+    }
+    
+    /* Reset title spacing for print */
+    .quarto-title-banner,
+    .quarto-title-block,
+    .quarto-container-body {
+        margin-top: 0 !important;
+    }
+}
+
+/* === TOC-specific fixes === */
+/* These selectors target all possible TOC elements in Quarto */
+
+/* Fixed sidebar TOC */
+.sidebar-menu-container,
+.sidebar-navigation,
+.sidebar nav[role="doc-toc"],
+.sidebar-tools-main,
+.sidebar-tools-popup,
+.sidebar-item-container,
+.sidebar-item,
+.sidebar,
+.nav-page nav,
+.sidebar,
+#quarto-sidebar,
+#quarto-margin-sidebar,
+#TOC,
+.toc-actions {
+    top: 60px !important; /* Position below navbar */
+    padding-top: 10px !important;
+    max-height: calc(100vh - 70px) !important; /* Viewport minus navbar */
+}
+
+/* In-page TOC container */
+.toc-content,
+.toc-left,
+.toc-right,
+.toc,
+.no-row-height {
+    margin-top: 60px !important;
+    padding-top: 10px !important;
+}
+
+/* For the floating TOC */
+.floating-toc,
+.zindex-over-content {
+    top: 70px !important;
+    max-height: calc(100vh - 80px) !important;
+}
+
+/* For mobile sidebar menu */
+.sidebar-menu {
+    top: 50px !important;
+    max-height: calc(100vh - 50px) !important;
+}
+
+/* Apply !important to override built-in Quarto styles */
+.sidebar nav.quarto-page-columns {
+    top: 60px !important;
+}
+
+/* If TOC is in margin, ensure content is properly positioned too */
+.quarto-margin-sidebar + .page-columns {
+    margin-top: 60px !important;
+}
+
+/* For sidebar that might be using absolute positioning */
+.sidebar[style*="position: absolute"],
+.sidebar[style*="position:absolute"] {
+    top: 60px !important;
+}
+
+/* Ensure sticky elements don't overlay */
+.sticky-top {
+    top: 60px !important;
+}
+
+
+/* === Footer Size Fix === */
+/* More specific selectors to ensure small footer text */
+
+/* Target all footer elements with maximum specificity */
+footer.quarto-footer,
+footer.quarto-footer .quarto-footer-contents,
+footer.quarto-footer .footer-items-container,
+footer.quarto-footer .nav-footer,
+footer.quarto-footer .nav-footer-center,
+footer.quarto-footer .nav-footer-right,
+footer.quarto-footer .nav-footer-left,
+div.quarto-footer,
+div.footer,
+.quarto-footer {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+}
+
+/* Target all text elements within footer */
+footer.quarto-footer p,
+footer.quarto-footer span,
+footer.quarto-footer div,
+footer.quarto-footer a,
+footer.quarto-footer ul,
+footer.quarto-footer li,
+footer.quarto-footer .footer-text,
+footer.quarto-footer .footer-items-container *,
+footer.quarto-footer .quarto-footer-contents * {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+}
+
+/* Target individual footer items for maximum compatibility */
+.footer .footer-copyright,
+.footer .footer-main,
+.footer-items-container .footer-item,
+.nav-footer-center p,
+.nav-footer-left p,
+.nav-footer-right p,
+.nav-footer a,
+.nav-footer .nav-item {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+}
+
+/* Ensure compact footer layout */
+footer.quarto-footer {
+    margin-top: 2rem !important;
+    padding: 0.3rem 0 !important;
+}
+
+/* Minimal spacing between footer elements */
+footer.quarto-footer p,
+footer.quarto-footer .footer-items-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Target any nested elements we might have missed */
+footer.quarto-footer * {
+    font-size: 10px !important;
+}
+
+/* Slightly reduce opacity for a more subtle footer */
+footer.quarto-footer {
+    opacity: 0.7;
 }

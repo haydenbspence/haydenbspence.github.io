@@ -12,9 +12,28 @@ $link-hover-color: lighten($link-color, 15%) !default;
 // Adjusted Code Block Styling
 $pre-bg: #202020 !default;  // Slightly lighter than body-bg
 $pre-color: #e0e0e0 !default;
+$code-bg: rgba(255, 255, 255, 0.1) !default; // Subtle background for inline code
+$code-color: lighten($link-color, 15%) !default; // Brighter than links for visibility
 
 // Tables
 $table-border-color: #333 !default;  // Softer table borders for better readability
+$table-bg: rgba(255, 255, 255, 0.03) !default; // Very subtle background for tables
+$table-striped-bg: rgba(255, 255, 255, 0.05) !default; // Slightly brighter for striped tables
 
 // Blockquotes
 $blockquote-color: #bbb !default;  // Make blockquotes distinct but subtle
+$blockquote-border-color: #444 !default; // Subtle border
+
+// Buttons
+$btn-primary-bg: $link-color !default;
+$btn-primary-color: $body-bg !default;
+
+// Focus styles for better accessibility
+$input-focus-border-color: lighten($link-color, 15%) !default;
+
+// Ensure adequate contrast for accessibility
+$navbar-dark-color: darken(white, 15%) !default;
+$navbar-dark-hover-color: white !default;
+
+// Sidenote and marginnote color adjustments
+$sidenote-color: darken($body-color, 15%) !default;
