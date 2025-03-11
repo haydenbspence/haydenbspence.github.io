@@ -1,0 +1,20 @@
+/*-- scss:defaults --*/
+// Dark mode color overrides for Tufte theme
+
+$theme: "tufte-dark" !default;
+
+// Color System
+$body-bg:    #151515 !default;  // Dark gray background (not pure black)
+$body-color: #e0e0e0 !default;  // Slightly lighter than #ddd for readability
+$link-color: #80b4f2 !default;  // Softer blue to avoid harsh contrast
+$link-hover-color: lighten($link-color, 15%) !default;
+
+// Adjusted Code Block Styling
+$pre-bg: #202020 !default;  // Slightly lighter than body-bg
+$pre-color: #e0e0e0 !default;
+
+// Tables
+$table-border-color: #333 !default;  // Softer table borders for better readability
+
+// Blockquotes
+$blockquote-color: #bbb !default;  // Make blockquotes distinct but subtle

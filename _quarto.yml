@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Spence"
+  navbar:
+    right:
+      - href: articles.qmd
+        text: Articles
+
+
+format:
+  html:
+    theme:
+      light: ["lightmode-tufte.scss"]
+      dark: ["darkmode-tufte.scss"]
+    css: styles.css
+    include-after-body: footer.html
+

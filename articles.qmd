@@ -1,0 +1,9 @@
+---
+title: "Articles"
+listing:
+  contents: articles
+  sort: "date desc"
+  #type: default
+  type: grid
+page-layout: full
+---
